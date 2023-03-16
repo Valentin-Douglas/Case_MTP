@@ -128,7 +128,7 @@
           <av:PointCollection x:Key="ConnectorLocation">300,220.5 300,299.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Sequence - Emissão de boleto" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_47">
+      <Sequence DisplayName="Sequence - Emissão de boleto" sap:VirtualizedContainerService.HintSize="1538,8096" sap2010:WorkflowViewState.IdRef="Sequence_47">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Default="SACADOS" Name="tb_name_sacados" />
           <Variable x:TypeArguments="x:String" Default="SACADO" Name="st_name_sacados" />
@@ -214,13 +214,13 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:ExcelApplicationScope>
-        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_sacados]" DisplayName="For Each Row in Data Table - dt_sacados" sap:VirtualizedContainerService.HintSize="1476,7502" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_sacados]" DisplayName="For Each Row in Data Table - dt_sacados" sap:VirtualizedContainerService.HintSize="1476,7542" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
           <ui:ForEachRow.Body>
             <ActivityAction x:TypeArguments="sd:DataRow">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Body - Sacado" sap:VirtualizedContainerService.HintSize="1442,7385" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <Sequence DisplayName="Body - Sacado" sap:VirtualizedContainerService.HintSize="1442,7425" sap2010:WorkflowViewState.IdRef="Sequence_6">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -356,7 +356,7 @@
                     <InArgument x:TypeArguments="x:String">[dte_vencimento_format.ToShortDateString]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="[cl_prazo_cedente]" DisplayName="Get Row Item - Prazo de Pagamento do Cedente" sap:VirtualizedContainerService.HintSize="1284,52" sap2010:WorkflowViewState.IdRef="GetRowItem_23" Row="[CurrentRow]">
+                <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="[cl_prazo_cedente]" DisplayName="Get Row Item - Prazo de Pagamento do Cedente" sap:VirtualizedContainerService.HintSize="1380,52" sap2010:WorkflowViewState.IdRef="GetRowItem_23" Row="[CurrentRow]">
                   <ui:GetRowItem.Value>
                     <OutArgument x:TypeArguments="x:Double">[dte_prazo_cedente]</OutArgument>
                   </ui:GetRowItem.Value>
@@ -367,7 +367,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:GetRowItem>
-                <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="[cl_valor_cedente]" DisplayName="Get Row Item - Valor a Pagar do Cedente" sap:VirtualizedContainerService.HintSize="1284,52" sap2010:WorkflowViewState.IdRef="GetRowItem_24" Row="[CurrentRow]">
+                <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="[cl_valor_cedente]" DisplayName="Get Row Item - Valor a Pagar do Cedente" sap:VirtualizedContainerService.HintSize="1380,52" sap2010:WorkflowViewState.IdRef="GetRowItem_24" Row="[CurrentRow]">
                   <ui:GetRowItem.Value>
                     <OutArgument x:TypeArguments="x:Double">[vlr_pg_convert]</OutArgument>
                   </ui:GetRowItem.Value>
@@ -424,10 +424,10 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:LogMessage>
-                <ui:LogMessage DisplayName="Log Message- Data Validation Sacado" sap:VirtualizedContainerService.HintSize="1380,52" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Razão Social&quot;+nm_razao_sacado+&quot; CNPJ:&quot;+nr_cnpj_sacado]">
+                <ui:LogMessage DisplayName="Log Message- Data Validation Sacado" sap:VirtualizedContainerService.HintSize="1380,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Razão Social &quot;+nm_razao_sacado+&quot; CNPJ:&quot;+nr_cnpj_sacado]">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
@@ -437,7 +437,7 @@
                     <OutArgument x:TypeArguments="x:String">[caminho_boleto]</OutArgument>
                   </Assign.To>
                   <Assign.Value>
-                    <InArgument x:TypeArguments="x:String">[Environment.CurrentDirectory + "\documentos\boletos"]</InArgument>
+                    <InArgument x:TypeArguments="x:String">[Path.GetFullPath(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\boletos")]</InArgument>
                   </Assign.Value>
                 </Assign>
                 <Assign DisplayName="Assign - Nome do Boleto" sap:VirtualizedContainerService.HintSize="1380,82" sap2010:WorkflowViewState.IdRef="Assign_16">
@@ -1514,7 +1514,7 @@
               <av:Size x:Key="ShapeSize">200,81</av:Size>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Sequence - Emissão de recibo" sap:VirtualizedContainerService.HintSize="1442,8431" sap2010:WorkflowViewState.IdRef="Sequence_37">
+          <Sequence DisplayName="Sequence - Emissão de recibo" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_37">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Default="SACADOS" Name="tb_name_sacados" />
               <Variable x:TypeArguments="x:String" Default="SACADO" Name="st_name_sacados" />
@@ -1602,13 +1602,13 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:ExcelApplicationScope>
-            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_sacados]" DisplayName="For Each Row in Data Table - dt_sacados" sap:VirtualizedContainerService.HintSize="1380,7877" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_sacados]" DisplayName="For Each Row in Data Table - dt_sacados" sap:VirtualizedContainerService.HintSize="1380,7623" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body - Sacado" sap:VirtualizedContainerService.HintSize="1346,7760" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                  <Sequence DisplayName="Body - Sacado" sap:VirtualizedContainerService.HintSize="1346,7506" sap2010:WorkflowViewState.IdRef="Sequence_36">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1820,7 +1820,6 @@
                         <InArgument x:TypeArguments="x:String">[nm_cidade_sacado.Substring(0, nm_cidade_sacado.Length -5)]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1284,92" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Info" Message="[nm_cidade]" />
                     <ui:LogMessage DisplayName="Log Message - Data Validation Cedente" sap:VirtualizedContainerService.HintSize="1284,92" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Razão Social &quot;+nm_razao_cedente+&quot; CNPJ:&quot;+nr_cnpj_cedente + &quot; data: &quot;+dte_pagamento + &quot; valor a pagar: R$&quot;+vlr_pagar_cedente]">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1842,15 +1841,7 @@
                         <OutArgument x:TypeArguments="x:String">[caminho_recibo]</OutArgument>
                       </Assign.To>
                       <Assign.Value>
-                        <InArgument x:TypeArguments="x:String">[Path.GetFullPath(Environment.CurrentDirectory+"\documentos\recibos")]</InArgument>
-                      </Assign.Value>
-                    </Assign>
-                    <Assign DisplayName="Assign - Nome do Recibo" sap:VirtualizedContainerService.HintSize="1284,82" sap2010:WorkflowViewState.IdRef="Assign_28">
-                      <Assign.To>
-                        <OutArgument x:TypeArguments="x:String">[nm_recibo_emitido]</OutArgument>
-                      </Assign.To>
-                      <Assign.Value>
-                        <InArgument x:TypeArguments="x:String">["Recibo num - "+nr_recibo+" - "+nm_razao_cedente+" - "+dte_pagamento.Replace("/","-")+".pdf"]</InArgument>
+                        <InArgument x:TypeArguments="x:String">[Path.GetFullPath(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\recibos")]</InArgument>
                       </Assign.Value>
                     </Assign>
                     <ui:FileExistsX DisplayName="File Exists - Retorna True se existe o boleto" Exists="[arquivo_existe]" sap:VirtualizedContainerService.HintSize="1284,133" sap2010:WorkflowViewState.IdRef="FileExistsX_3" Path="[caminho_recibo+&quot;\&quot;+nm_recibo_emitido]" />
