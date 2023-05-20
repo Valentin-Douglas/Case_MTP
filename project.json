@@ -1,13 +1,13 @@
 {
-  "name": "CaseMTP",
+  "name": "RPA_Test_UiPath",
   "description": "Case para avaliação de técnica em desenvolvimento de automação em UiPath Studio",
   "main": "Main.xaml",
   "dependencies": {
-    "UiPath.Excel.Activities": "[2.18.0-preview]",
-    "UiPath.Mail.Activities": "[1.18.2]",
-    "UiPath.System.Activities": "[23.2.0-preview]",
-    "UiPath.Testing.Activities": "[23.2.0-preview]",
-    "UiPath.UIAutomation.Activities": "[23.2.0-preview]"
+    "UiPath.Excel.Activities": "[2.20.1]",
+    "UiPath.Mail.Activities": "[1.19.0]",
+    "UiPath.System.Activities": "[23.5.0-preview]",
+    "UiPath.Testing.Activities": "[23.5.0-preview]",
+    "UiPath.UIAutomation.Activities": "[23.5.0-preview]"
   },
   "webServices": [],
   "entitiesStores": [],
